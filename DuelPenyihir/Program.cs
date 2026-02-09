@@ -6,9 +6,44 @@ Console.WriteLine("Permainan Dimulai.....\n");
 wizardA.ShowStats();
 wizardB.ShowStats();
 
-wizardA.Attack(wizardB);
-wizardB.Attack(wizardA);
-wizardA.Attack(wizardB);
+//wizardA.Attack(wizardB);
+//wizardB.Attack(wizardA);
+//wizardA.Attack(wizardB);
+
+string pilihan;
+
+while (wizardA.Energi > 0 && wizardB.Energi > 0)
+{
+
+    Console.WriteLine($"1. {wizardA.Nama} Menyerang {wizardB.Nama}");
+    Console.WriteLine($"2. {wizardB.Nama} Menyerang {wizardA.Nama}");
+    Console.WriteLine($"3. {wizardA.Nama} Melakukan Heal");
+    Console.WriteLine($"4. {wizardB.Nama} Melakukan Heal");
+
+    Console.Write("\nMasukkan pilihanmu (1/2/3/4) : ");
+    pilihan = Console.ReadLine();
+
+    if (pilihan == "1")
+    {
+        wizardA.Attack(wizardB);
+    }
+    else if (pilihan == "2")
+    {
+        wizardB.Attack(wizardA);
+    }
+    else if (pilihan == "3")
+    {
+        wizardA.Heal();
+    }
+    else if (pilihan == "4")
+    {
+        wizardB.Heal();
+    }
+    else
+    {
+        Console.WriteLine("Pilihan Tidak Valid!");
+    }
+}
 
 Console.WriteLine("Permainan Berakhir....!\n");
 wizardA.ShowStats();
@@ -26,7 +61,7 @@ public class Wizard
     public Wizard (string nama, int damage)
     {
         Nama = nama;
-        Energi = 100;
+        Energi = 50;
         Damage = damage;
     }
 
