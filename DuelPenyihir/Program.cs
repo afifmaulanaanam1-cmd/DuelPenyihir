@@ -49,6 +49,15 @@ Console.WriteLine("Permainan Berakhir....!\n");
 wizardA.ShowStats();
 wizardB.ShowStats();
 
+if (wizardB.Energi < wizardA.Energi)
+{
+    Console.WriteLine($"{wizardA.Nama} memenangkan pertandingan");
+}
+else
+{
+    Console.WriteLine($"{wizardB.Nama} memenangkan pertandingan");
+}
+
 
 public class Wizard
 {
