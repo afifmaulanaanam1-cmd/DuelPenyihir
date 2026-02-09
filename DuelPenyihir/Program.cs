@@ -43,4 +43,21 @@ public class Wizard
         Console.WriteLine($"{Nama} menyerang {wizardlawanOBJ.Nama}");
         Console.WriteLine($"Sisa energi {wizardlawanOBJ.Nama} adalah {wizardlawanOBJ.Energi}\n");
     }
+
+    public void Heal()
+    {
+        Energi += 5;
+        if (Energi < 100)
+        {
+
+            Console.WriteLine($"{Nama} melakukan heal! Energi meningkat menjadi {Energi}");
+
+        }
+        else
+        {
+            Energi = 100; 
+           Console.WriteLine("Sudah mencapai energi maksimum");
+            
+        }
+    }
 }
